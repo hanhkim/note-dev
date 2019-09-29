@@ -1,0 +1,21 @@
+
+<div id="LoginForm" class="container border border-primary">
+  <div class="login-form">
+      <div class="main-div">
+          <div class="panel">
+             <h1>Đăng nhập</h1>
+             <p *ngIf="!errBoolean">Vui lòng nhập email và mật khẩu</p>
+             <p *ngIf="errBoolean" style="color: red">{{ errLogingMessage }}</p>
+          </div>
+          <form [formGroup]='loginForm' (ngSubmit)="login()">
+              <div class="form-group">
+                  <input type="text" id="username" placeholder="enter username" formControlName="username">
+              </div>
+              <div class="form-group">
+                  <input type="password"  id="password" placeholder="enter password" formControlName="password">
+              </div>                    
+              <button type="submit" class="btn btn-success">Đăng nhập</button>
+          </form>
+      </div>       
+  </div>
+</div>

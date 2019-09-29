@@ -1,0 +1,30 @@
+.full-body {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 20% 80%;
+    
+    .left-region {
+        background: #252526;
+        color: white;
+    }
+    
+    .right-region {
+        background-image: url("../../../assets/images/main-background4.jpg");
+        background-repeat: no-repeat;
+        background-size: 100%;
+
+        .header-region {
+            height: 40px;
+            border-bottom: 1px solid black;
+            background-color: black;
+            color: white;
+        }
+    
+        .content-region {
+    
+        }
+    }
+}

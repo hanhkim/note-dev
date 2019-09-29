@@ -1,0 +1,52 @@
+.dashboard-part {
+    margin: 10px 0px;
+    color: white;
+
+    .header {
+        display: grid;
+        grid-template-columns: 60% 20% 20%;
+        height: 50px; 
+        line-height: 50px;
+        text-align: left;
+        background: #383838;
+        padding: 0px 20px;
+
+        .title-note {
+        
+            h4 {
+                cursor: pointer;    
+                margin-bottom: 0px;
+                line-height: 45px;
+            }
+        }
+
+        .part-btn {
+            text-align: right;
+            padding-right: 2px;
+        }
+    }
+
+    .content {        
+        margin-top: 10px;
+        padding: 0px 20px;
+
+        // .part-btn {
+        //     margin-bottom: 10px;
+        // }
+
+        .content-note {
+            clear: both;
+            border: 1px solid;
+
+            textarea {
+                overflow: scroll; 
+                white-space: nowrap;
+                width: 100%;
+                min-height: 500px;
+                padding: 20px;
+                background: #383838;
+                color: white;
+            }
+        }
+    }
+}

@@ -1,0 +1,16 @@
+<div class="dashboard-part">
+    <div class="header">
+        <div class="title-note">
+            <input type="text" [(ngModel)]="note.title" id="">
+        </div>
+        <div class="right-col">
+            <button (click)="createNote()">Save</button>
+        </div>
+    </div>
+    <div class="content">
+        <div class="content-note">
+            <textarea [(ngModel)]="note.content"></textarea>
+        </div>
+    </div>
+</div>
+

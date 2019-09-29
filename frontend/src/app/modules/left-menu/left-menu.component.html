@@ -1,0 +1,47 @@
+<div class="left-menu">
+    <div class="title">
+        <img src="../../../assets/images/notedev.PNG" alt="">
+    </div>
+    <h5>Thư viện của bạn
+        <span class="right-col"><i class="fas fa-plus"  data-toggle="modal" data-target="#modalCreateGroup"></i></span>
+    </h5>
+
+    <div class="tree-menu" *ngFor="let gr of listGroup; let i of index">
+        <div class="group">
+            <h6> <i class="rotate fas fa-chevron-right" (click)="showChild($event, gr)"></i> 
+                <span *ngIf="!titleGroupEdit || rowClick != i" (dblclick)="titleGroupEdit = true; rowClick = i"> {{gr.name}} </span>
+                <span *ngIf="titleGroupEdit && rowClick == i"><input type="text" [(ngModel)]="gr.name" (blur)="changeTitleGroup(gr)"
+                            (keyup.enter)="changeTitleGroup(gr)"></span> <!-- Show input when double-click title group -->
+                <span class="right-col">
+                    <i class="fas fa-plus space-10" (click)="createNote(gr)"></i> 
+                    <i class="fas fa-trash-alt" (click)="deleteGroup(gr)"></i> 
+                </span>
+            </h6>
+
+            <div class="child-group">
+                <div class="row-note" *ngFor="let note of notes" routerLink="/note/{{gr._id}}/{{note._id}}" routerLinkActive="active-link"> {{note.title}} </div>
+            </div>          
+        </div>
+    </div>
+</div>
+
+<!-- The Modal -->
+<div class="modal" id="modalCreateGroup">
+    <div class="modal-dialog">
+        <div class="modal-content">            
+            <!-- Modal body -->
+            <div class="modal-body">
+                <input type="text" [(ngModel)]="group" placeholder="Nhập tên group">
+            </div>
+            
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-success" (click)="createNewGroup()" data-dismiss="modal">Create</button>
+            </div>
+        </div>
+    </div>
+</div>
+        
+  
+

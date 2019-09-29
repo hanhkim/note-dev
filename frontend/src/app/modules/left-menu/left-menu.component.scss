@@ -1,0 +1,102 @@
+.left-menu {
+    .title {
+        img {
+            height: 60px;
+            border: 4px solid black;
+        }
+    }
+    
+    h5 {
+        background-color: grey;
+        height: 30px;
+        line-height: 30px;
+        margin-bottom: 20px;
+
+        span {
+            padding-right: 10px;
+    
+            i {
+                border: 1px solid #eeeeee;
+                padding: 2px;
+    
+                &:hover {
+                    background: #383838;
+                }
+            }
+        }
+    
+    }
+
+    .tree-menu {
+        background: #383838;
+    
+        .group {
+            text-align: left;
+            margin-bottom: 2px;
+            padding: 5px;
+    
+            h6 {
+                padding-left: 10px;
+                height: 20px;
+                line-height: 20px;
+                margin-bottom: 0px;
+            }
+
+            i {
+                font-size: 11px;
+                padding: 1px;
+
+                &:hover {
+                    color: black;
+                }
+            }
+
+            .rotate {
+                padding: 5px;
+                transition: all 0.2s linear;
+
+                &.down {
+                    transform: rotate(90deg);
+                }
+            }
+
+            .child-group {
+                display: none;
+                transition: all 1s linear;
+
+                &.show {
+                    display: block;
+                    transition: all 1s linear;
+                }
+
+                .row-note {
+                    margin-bottom: 1px;
+                    cursor: pointer;
+
+                    &:hover {
+                        background: #0D3583;
+                    }
+                }
+            }
+            
+        }
+    }
+}
+
+.modal-dialog { 
+    width: 400px;
+
+    .modal-body {
+        input {
+            width: 370px;
+            height: 40px;
+            padding: 0px 10px;
+        }
+    }
+
+    .modal-footer {
+        border-top: unset;
+        padding: 0px 10px 10px 0px;
+    }
+}
+
