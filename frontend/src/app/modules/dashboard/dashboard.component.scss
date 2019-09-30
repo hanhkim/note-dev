@@ -4,7 +4,7 @@
 
     .header {
         display: grid;
-        grid-template-columns: 60% 20% 20%;
+        grid-template-columns: 60% 10% 30%;
         height: 50px; 
         line-height: 50px;
         text-align: left;
@@ -23,17 +23,28 @@
         .part-btn {
             text-align: right;
             padding-right: 2px;
+            position: relative;
+
+            .btn-note {
+                height: 35px;
+                width: 70px;
+                line-height: 32px;
+                background: white;
+                border: unset;
+
+                &:hover {
+                    background: #0D36F2;
+                    color: white;
+                }
+            }
+    
         }
     }
 
     .content {        
         margin-top: 10px;
         padding: 0px 20px;
-
-        // .part-btn {
-        //     margin-bottom: 10px;
-        // }
-
+        
         .content-note {
             clear: both;
             border: 1px solid;

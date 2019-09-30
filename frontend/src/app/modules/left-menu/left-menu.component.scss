@@ -72,10 +72,17 @@
                 .row-note {
                     margin-bottom: 1px;
                     cursor: pointer;
+                    padding-left: 45px;
+                    height: 20px;
 
                     &:hover {
                         background: #0D3583;
                     }
+                }
+
+                .active-link {
+                    background: #0D3583;    
+                    border-left: 1px solid;
                 }
             }
             

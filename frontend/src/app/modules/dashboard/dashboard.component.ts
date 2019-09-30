@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { NoteService } from '../../services/note/note.service';
 
 @Component({
@@ -15,8 +15,11 @@ export class DashboardComponent implements OnInit {
         content: ""
     }
 
+    booleanEditAction: boolean = false;
+
     constructor(
         private route: ActivatedRoute,
+        private router: Router,
         private noteService: NoteService
     ) { 
         route.params.subscribe(url => {
@@ -40,4 +43,26 @@ export class DashboardComponent implements OnInit {
             }, err => console.log(err))
     }
 
+    editNote() {
+        this.booleanEditAction = true;
+    }
+
+    saveNote() {
+        if (this.booleanEditAction) {
+            this.noteService.updateNote(this.note)
+                .subscribe(data => {
+                    this.booleanEditAction = false;
+
+                }, err => console.log(err))
+        }
+    }
+
+    deleteNote() {
+        this.noteService.deleteNote(this.note)
+            .subscribe(data => {
+                this.router.navigate(["/"]);
+                alert("Delete ok")
+
+            }, err => console.log(err))
+    }
 }

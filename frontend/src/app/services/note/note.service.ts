@@ -38,4 +38,12 @@ export class NoteService {
     loadNote(idGroup, idNote) {
         return this.httpService.get(`note/${idGroup}/${idNote}`);
     }
+
+    updateNote(note: any) {
+        return this.httpService.put('note', note);
+    }
+
+    deleteNote(note: any) {
+        return this.httpService.delete('note', note);
+    }
 }

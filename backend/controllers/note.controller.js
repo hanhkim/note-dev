@@ -55,14 +55,14 @@ exports.loadNote = function(req, res) {
 }
 
 exports.update = function(req, res) {
-    console.log(req.body)
-    if (!req.body.name) {
+    console.log("vao update r ne: ", req.body)
+    if (!req.body.id && !req.body.idGroup) {
         return res.status(400).send({
-            message: "Group name not empty!"
+            message: "Bad request!"
         })
     }
 
-    Group.findByIdAndUpdate(req.body._id, {name: req.body.name},  {new: true})
+    Note.findOneAndUpdate({_id: req.body.id, idGroup: req.body.idGroup}, {title: req.body.title, content: req.body.content},  {new: true})
         .then(data => {
             if (!data || data.length === 0) {
                 return res.status(400).send({
@@ -81,13 +81,13 @@ exports.update = function(req, res) {
 
 exports.delete = function(req, res) {
     console.log(req.body)
-    if (!req.body.id) {
+    if (!req.body.id && !req.body.idGroup) {
         return res.status(400).send({
-            message: "Group name not empty"
+            message: "Can't find this note!"
         })
     }
 
-    Group.findByIdAndDelete(req.body.id)
+    Note.findOneAndDelete({_id: req.body.id.id, idGroup: req.body.id.idGroup})
         .then(data => {
             if (!data) {
                 return res.status(400).send({

@@ -1,21 +1,21 @@
 <div class="dashboard-part">
     <div class="header">
         <div class="title-note">
-            <h4>{{ note.title }}</h4>
+            <h4 *ngIf="!booleanEditAction">{{ note.title }}</h4>
+            <input *ngIf="booleanEditAction" type="text" name="" id="" [(ngModel)]="note.title">
         </div>
         <div class="right-col">
             <label for="">Last Update: 11:46am, 21/09/2019</label> 
         </div>
         <div class="part-btn right-col">
-            <a class="space-10" href="http://">Edit</a>
-            <a class="space-10" href="http://">Delete</a>
-            <a href="http://">Save</a>
+            <input class="btn-note space-10" type="button" (click)="editNote();" value="Edit">
+            <input class="btn-note space-10" type="button" (click)="deleteNote();" value="Delete">
+            <input class="btn-note" type="button" (click)="saveNote();" value="Save">
         </div>
-       
     </div>
     <div class="content">
         <div class="content-note">
-            <textarea>{{ note.content }}</textarea>
+            <textarea [(ngModel)]="note.content" [readonly]="!booleanEditAction"></textarea>
         </div>
     </div>
 </div>
