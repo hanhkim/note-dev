@@ -2,9 +2,10 @@
 
 ###################################################
 #For frontend
++ Install angular cli
 + npm install
 + ng serve
-(firt: ng new frontend --skip -git')
+(first init: ng new frontend --skip -git')
 
 
 
